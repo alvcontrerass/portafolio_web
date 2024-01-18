@@ -109,6 +109,14 @@ a:visited {
     border-top: 1px solid #9EF76A;
 }
 
+#main-about {
+    display: grid;
+}
+
+.about {
+
+}
+
 #footer-ultimo {
     text-align: right;
     padding-right: 10px;
