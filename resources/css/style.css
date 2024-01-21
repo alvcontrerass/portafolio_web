@@ -37,6 +37,38 @@ nav a:hover {
     color: var(--primary-color);
 }
 
+.home {
+    float: right;
+    margin: 0 2rem;
+}
+
+@media (width<=810px) {
+
+}
+
+@media (width<=480px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    ul {
+        padding-left: 0;
+    }
+
+    nav ul li{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .home {
+        float: none;
+        margin: 0;
+    }
+}
 
 .footer a {
     transition: 500ms;
@@ -51,14 +83,6 @@ nav a:hover {
 .footer a:hover {
     background-color: var(--secundary-color);
     color: var(--primary-color);
-}
-
-a:visited {
-    text-decoration: none;
-}
-
-.home {
-    float: right;
 }
 
 .profile {
@@ -136,10 +160,6 @@ a:visited {
     display: grid;
 }
 
-.about {
-
-}
-
 #footer-ultimo {
     text-align: right;
     padding-right: 1rem;
@@ -186,3 +206,4 @@ a:visited {
 .icono-footer {
     font-size: 2rem;
 }
+
