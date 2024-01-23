@@ -22,7 +22,7 @@ nav ul li{
     display: inline;
 }
 
-nav a {
+.footer a, nav a{
     transition: 500ms;
     transition-timing-function: ease;
     text-decoration: none;
@@ -32,7 +32,7 @@ nav a {
     color: var(--secundary-color);
 }
 
-nav a:hover {
+.footer a:hover, nav a:hover {
     background-color: var(--secundary-color);
     color: var(--primary-color);
 }
@@ -68,21 +68,6 @@ nav a:hover {
         float: none;
         margin: 0;
     }
-}
-
-.footer a {
-    transition: 500ms;
-    transition-timing-function: ease;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    padding: 1.4rem 1.6rem;
-    color: var(--secundary-color);
-}
-
-.footer a:hover {
-    background-color: var(--secundary-color);
-    color: var(--primary-color);
 }
 
 .profile {
@@ -123,11 +108,26 @@ nav a:hover {
     grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
 }
 
+@media (width<=480px) {
+    .main {
+        padding-top: 25rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
 .ejemplo {
     background-color: var(--background-light);
     height: 40rem;
     border: 1px solid var(--secundary-color);
     display: flex;
+}
+
+#imagen-uno {
+    background-image: url(../assets/images/zenith.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 45%;
 }
 
 .overlay {
@@ -138,7 +138,7 @@ nav a:hover {
 }
 
 .ejemplo:hover .overlay {
-    opacity: 1; 
+    opacity: 0.8; 
 }
 
 .footer {
