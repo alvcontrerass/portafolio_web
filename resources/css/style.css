@@ -66,17 +66,24 @@ nav ul li{
 }
 
 .saludo {
-    display: inline-block;
-    font-size: 2.4rem;
-    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    padding-top: 10px;
+}
+
+.contenedor-typed {
+    width: fit-content;
+    align-self: center;
 }
 
 .typed {
     overflow: hidden;
     white-space: nowrap;
     border-right: 1rem solid;
-    width: 0;
-    animation: typing 1.5s steps(30, end) forwards, blinking 1s infinite;
+    animation: typing 2s steps(30, end) forwards, blinking 1s infinite;
 }
 
 .formore {
@@ -223,7 +230,7 @@ nav ul li{
 
 /*Animaciones*/
 @keyframes typing {
-    from { width: 0 }
+    from { width: 0% }
     to { width: 100% }
 }
 
