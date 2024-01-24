@@ -1,27 +1,36 @@
 :root {
-    --primary-color: #220d42;
-    --secundary-color: #80c957;
+    --background-color: #220d42;
+    --primary-color: #80c957;
     --background-darker: #18092e;
     --background-light: #3A1670;
 }
 
+/*Globales*/
 body {
     margin: 0;
     font-size: 16px;
+    color: var(--primary-color);
+    background-image: linear-gradient(to top, var(--background-darker) 0%, var(--background-color) 100%);
 }
 
 html {
     font-family: 'JetBrains Mono', monospace, system-ui, sans-serif;
-    background-color: var(--primary-color);
-    color: var(--secundary-color);
     font-size: 62.5%;
+}
+
+ul {
+    display: flex;
 }
 
 nav ul li{
     list-style-type: none;
-    display: inline;
 }
 
+.home { /* Cambiar a flexbox */
+    margin-left: auto;
+}
+
+/*Navbar junto a links de navbar y footer*/
 .footer a, nav a{
     transition: 500ms;
     transition-timing-function: ease;
@@ -29,55 +38,28 @@ nav ul li{
     display: inline-block;
     text-align: center;
     padding: 1.4rem 1.6rem;
-    color: var(--secundary-color);
-}
-
-.footer a:hover, nav a:hover {
-    background-color: var(--secundary-color);
     color: var(--primary-color);
 }
 
-.home {
-    float: right;
-    margin: 0 2rem;
+.footer a:hover, nav a:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
 }
 
-@media (width<=810px) {
-
-}
-
-@media (width<=480px) {
-    nav {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-    }
-
+@media (width<=480px) { /*Agregar boton con js*/
     ul {
-        padding-left: 0;
-    }
-
-    nav ul li{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        align-items: center;
+        padding: 0;
     }
 
     .home {
-        float: none;
-        margin: 0;
+        margin: auto;
     }
 }
 
-.profile {
-    border-radius: 50%;
-    width: 3rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
+/*Saludo hero*/
 .hero {
     text-align: center;
     padding-top: 15rem;
@@ -102,10 +84,26 @@ nav ul li{
     animation: move 5s 3s infinite
 }
 
+@media (width<=480px) {
+    .hero {
+        padding-top: 5rem;
+    }
+
+    .saludo {
+        font-size: 2rem;
+        width: 100%;
+    }
+
+    .saludo h1, .typed h2 {
+        overflow-wrap: break-word;
+    }
+}
+
+/*Main experiencia-ejemplos*/
 .main {
     padding-top: 25rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(650px, 1fr)); /*probar con min*/
 }
 
 @media (width<=480px) {
@@ -119,8 +117,24 @@ nav ul li{
 .ejemplo {
     background-color: var(--background-light);
     height: 40rem;
-    border: 1px solid var(--secundary-color);
+    border: 1px solid var(--primary-color);
     display: flex;
+}
+
+.overlay {
+    width: 100%;
+    opacity: 0;
+    transition: .7s ease;
+    background-color: var(--primary-color);
+
+}
+
+.ejemplo:hover .overlay {
+    opacity: 0.8; 
+}
+
+.overlay p {
+    color: #18092e;
 }
 
 #imagen-uno {
@@ -130,17 +144,7 @@ nav ul li{
     background-position: 45%;
 }
 
-.overlay {
-    width: 100%;
-    opacity: 0;
-    transition: .7s ease;
-    background-color: var(--secundary-color);
-}
-
-.ejemplo:hover .overlay {
-    opacity: 0.8; 
-}
-
+/*Footer*/
 .footer {
     background-color: var(--background-darker);
     width: 100%;
@@ -153,50 +157,60 @@ nav ul li{
     width: 33.3%;
     height: 20rem;
     overflow: auto;
-    border-top: 1px solid var(--secundary-color);
+    border-top: 1px solid var(--primary-color);
 }
 
-#main-about {
-    display: grid;
-}
-
-#footer-ultimo {
-    text-align: right;
-    padding-right: 1rem;
-}
-
-#footer-mid {
-    text-align: center;
-}
-
-#footer-primero {
+.primero {
     text-align: left;
     padding-left: 1rem;
 }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+.mid {
+    text-align: center;
 }
 
-@keyframes blinking {
-    0% {border-right-color: transparent}
-    50% {border-right-color: var(--secundary-color)}
-    100% {border-right-color: transparent}
+.ultimo {
+    text-align: right;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-content: end;
+    justify-content: end;
+    padding-bottom: 1rem;
 }
 
-@keyframes move {
-    0%, 100% {transform: translateY(0);}
-    10%, 30%, 50%, 70% { transform: translateY(-0.8rem);}
-    20%, 40%, 60% {transform: translateY(0.8rem);}
+#footer-ultimo p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24;
+@media (width<=480px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-container {
+        width: 100%;
+    }
+
+    .primero, .mid, .ultimo {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: start;
+        text-align: center;
+        padding: 0;
+    }
+
+    .ultimo {
+        height: auto;
+    }
+
+    .ultimo p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
 }
 
 .icono-flecha {
@@ -207,3 +221,28 @@ nav ul li{
     font-size: 2rem;
 }
 
+/*Animaciones*/
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blinking {
+    0% {border-right-color: transparent}
+    50% {border-right-color: var(--primary-color)}
+    100% {border-right-color: transparent}
+}
+
+@keyframes move {
+    0%, 100% {transform: translateY(0);}
+    10%, 30%, 50%, 70% { transform: translateY(-0.8rem);}
+    20%, 40%, 60% {transform: translateY(0.8rem);}
+}
+/*Configuracion google icons*/
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
