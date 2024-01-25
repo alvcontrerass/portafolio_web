@@ -87,7 +87,7 @@ nav ul li{
 }
 
 .formore {
-    padding-top: 20rem;
+    padding-top: 15rem;
     animation: move 5s 3s infinite
 }
 
@@ -127,28 +127,48 @@ nav ul li{
     border: 1px solid var(--primary-color);
     display: flex;
 }
-
+/*Revisar overflox solo en el parrafo*/
 .overlay {
+    color: #18092e;
     width: 100%;
     opacity: 0;
     transition: .7s ease;
     background-color: var(--primary-color);
-
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
 }
 
 .ejemplo:hover .overlay {
-    opacity: 0.8; 
+    opacity: 0.9; 
 }
 
-.overlay p {
-    color: #18092e;
-}
-
-#imagen-uno {
+.uno {
     background-image: url(../assets/images/zenith.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 45%;
+}
+
+.info-ejemplo-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.info-ejemplo-top h4 {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+}
+
+.info-ejemplo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /*Footer*/
@@ -186,7 +206,7 @@ nav ul li{
     padding-bottom: 1rem;
 }
 
-#footer-ultimo p {
+.ultimo p {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
