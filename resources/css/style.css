@@ -20,6 +20,7 @@ html {
 
 ul {
     display: flex;
+    padding-right: 4rem;
 }
 
 nav ul li{
@@ -127,7 +128,7 @@ nav ul li{
     border: 1px solid var(--primary-color);
     display: flex;
 }
-/*Revisar overflox solo en el parrafo*/
+
 .overlay {
     color: #18092e;
     width: 100%;
@@ -137,7 +138,7 @@ nav ul li{
     padding: 1rem 1rem;
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    
 }
 
 .ejemplo:hover .overlay {
@@ -168,7 +169,7 @@ nav ul li{
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    overflow: auto;
 }
 
 /*Footer*/
@@ -246,6 +247,21 @@ nav ul li{
 
 .icono-footer {
     font-size: 2rem;
+}
+
+/*sobre_mi.html*/
+.about-main {
+    display: flex;
+    justify-content: center;
+}
+
+.about {
+    height: 100%;
+    width: 50%;
+    background-color: black;
+    border-radius: 2rem;
+    padding: 2rem 2rem;
+    text-align: center;
 }
 
 /*Animaciones*/
