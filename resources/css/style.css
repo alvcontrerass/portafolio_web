@@ -2,7 +2,7 @@
     --background-color: #220d42;
     --primary-color: #80c957;
     --background-darker: #18092e;
-    --background-light: #3A1670;
+    --background-light: #2E1247;
 }
 
 /*Globales*/
@@ -27,7 +27,7 @@ nav ul li{
     list-style-type: none;
 }
 
-.home { /* Cambiar a flexbox */
+.home {
     margin-left: auto;
 }
 
@@ -41,8 +41,7 @@ nav ul li{
     padding: 1.4rem 1.6rem;
     color: var(--primary-color);
 }
-
-.footer a:hover, nav a:hover {
+.footer a:hover, nav a:hover, .about-text a:hover {
     background-color: var(--primary-color);
     color: var(--background-color);
 }
@@ -123,7 +122,7 @@ nav ul li{
 }
 
 .ejemplo {
-    background-color: var(--background-light);
+    background-color:var(--background-light);
     height: 40rem;
     border: 1px solid var(--primary-color);
     display: flex;
@@ -252,16 +251,52 @@ nav ul li{
 /*sobre_mi.html*/
 .about-main {
     display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
 .about {
     height: 100%;
-    width: 50%;
-    background-color: black;
+    width: 70%;
+    background-color: #2E1247;
     border-radius: 2rem;
-    padding: 2rem 2rem;
+    padding: 2rem;
+    margin: 4rem 0 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-images {
+    width: 30rem;
+    align-self: center;
+}
+
+.about-images img {
+    width: 100%;
+}
+
+.about-text a{
+    transition: 500ms;
+    transition-timing-function: ease;
+    display: inline-block;
+    text-align: center;
+    padding: 0.2rem 0.2rem;
+    color: var(--primary-color);
+}
+
+.about-text ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+}
+.about-text li a {
+    text-decoration: none;
+}
+
+.color:hover {
+    stroke: var(--background-color);
 }
 
 /*Animaciones*/
