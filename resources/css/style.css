@@ -143,12 +143,16 @@ nav ul li{
 .ejemplo:hover .overlay {
     opacity: 0.9; 
 }
-
+/**/
 .uno {
     background-image: url(../assets/images/zenith.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 45%;
+}
+
+.dos, .tres, .cuatro {
+    cursor: wait;
 }
 
 .info-ejemplo-top {
