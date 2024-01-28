@@ -46,6 +46,11 @@ nav ul li{
     color: var(--background-color);
 }
 
+.activo {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
 @media (width<=480px) { /*Agregar boton con js*/
     ul {
         display: flex;
